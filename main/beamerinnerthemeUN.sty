@@ -43,7 +43,10 @@
    \ifnum\thepage>1\relax %Para primera página
    \fill[color={rgb,255:red,232; green,83 ; blue,53}]
    (1*\the\paperwidth/100,0) rectangle(\the\paperwidth,\the\paperheight/9); 
+   \node (logo) [inner sep=0pt] at (9*\the\paperwidth/10,\the\paperheight/20){\includegraphics[width=.15\textwidth]{logos/Logo_UNAL_blancoRojo.pdf}};
    \fi
+   
+   
    
   \end{tikzpicture}
 
