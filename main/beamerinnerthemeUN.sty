@@ -1,0 +1,479 @@
+\mode<presentation>
+
+\definecolor{Rojo    }{RGB}{1,0.5,0} %Rojo
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight); %De abajo hacia arriba (izquierda)
+  % FRANJAS DE COLORES IZQUIERDA
+  \fill[color={rgb,255:red,53 ; green,64 ; blue,143}] (0,0) rectangle(\the\paperwidth/100,\the\paperheight/7);
+  \fill[color={rgb,255:red,30 ; green,111; blue,193}] (0,\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+1*\the\paperheight/7);
+  \fill[color={rgb,255:red,55 ; green,183; blue,146}] (0,\the\paperheight/7+1*\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+2*\the\paperheight/7);
+  \fill[color={rgb,255:red,244; green,183; blue, 61}] (0,\the\paperheight/7+2*\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+3*\the\paperheight/7);
+  \fill[color={rgb,255:red,242; green,231; blue,204}] (0,\the\paperheight/7+3*\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+4*\the\paperheight/7);
+  \fill[color={rgb,255:red,232; green,83 ; blue,53 }] (0,\the\paperheight/7+4*\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+5*\the\paperheight/7);
+  \fill[color={rgb,255:red,182; green,17 ; blue,127}] (0,\the\paperheight/7+5*\the\paperheight/7) rectangle(\the\paperwidth/100,\the\paperheight/7+6*\the\paperheight/7);
+  %\fill[color=orange] (0,0) rectangle(2.95,1.9);
+  %\fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+  
+  \ifnum\thepage=1\relax %Para primera página
+  
+   % FRANJAS DE COLORES DERECHA
+   %\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fill[color={rgb,255:red,46 ; green,58 ; blue,160}] (\the\paperwidth-\the\paperwidth/100,0                                      ) rectangle(\the\paperwidth,\the\paperheight/7                     );
+   \fill[color={rgb,255:red,30 ; green,111; blue,193}] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7                     ) rectangle(\the\paperwidth,\the\paperheight/7+1*\the\paperheight/7);
+   \fill[color={rgb,255:red,55 ; green,183; blue,146}] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7+1*\the\paperheight/7) rectangle(\the\paperwidth,\the\paperheight/7+2*\the\paperheight/7);
+   \fill[color={rgb,255:red,244; green,183; blue, 61}] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7+2*\the\paperheight/7) rectangle(\the\paperwidth,\the\paperheight/7+3*\the\paperheight/7);
+   \fill[color={rgb,255:red,242; green,231; blue,204}] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7+3*\the\paperheight/7) rectangle(\the\paperwidth,\the\paperheight/7+4*\the\paperheight/7);
+   \fill[color={rgb,255:red,232; green,83 ; blue,53 }] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7+4*\the\paperheight/7) rectangle(\the\paperwidth,\the\paperheight/7+5*\the\paperheight/7);
+   \fill[color={rgb,255:red,182; green,17 ; blue,127}] (\the\paperwidth-\the\paperwidth/100,\the\paperheight/7+5*\the\paperheight/7) rectangle(\the\paperwidth,\the\paperheight/7+6*\the\paperheight/7);
+   
+   % FONDO AMARILLO PRIMERA PAGINA
+   \fill[color={rgb,255:red,243; green,183; blue, 60}]
+   (\the\paperwidth/100,0) rectangle(\the\paperwidth-\the\paperwidth/100,\the\paperheight); 
+   
+   % IMAGEN LOGO PRIMER FRAME
+   \node (logo) [inner sep=0pt] at (\the\paperwidth/2,3*\the\paperheight/5){\includegraphics[width=.23\textwidth]{logos/EscudoUNAL_negroA.pdf}};
+   
+   \fill[color={rgb,255:red,232; green,83 ; blue,53}]
+   (1*\the\paperwidth/5,0) rectangle(\the\paperwidth-1*\the\paperwidth/5,\the\paperheight/7); 
+   
+   \fi  
+   
+   
+  \end{tikzpicture}
+
+
+}
+
+%% Title page
+%\defbeamertemplate*{title page}{UN}[1][]
+%{
+%   \vskip6cm%
+%    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+%      \usebeamerfont{title}\inserttitle\par%
+%    \end{beamercolorbox}%
+%    \vskip0.75cm%
+%    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+%      \usebeamerfont{author}\insertauthor%
+%    \end{beamercolorbox}
+%     \vskip0.2cm%
+%    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+%      \usebeamerfont{author}\insertdate%
+%    \end{beamercolorbox}
+%  \vfill
+%  
+%  \let\oldmaketitle\maketitle
+%}
+
+\defbeamertemplate*{title page}{UN}[1][]
+{
+	\vbox{}
+	\vfill
+	\begingroup
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,#1]{title}
+		\usebeamerfont{title}\inserttitle\par%
+		\ifx\insertsubtitle\@empty%
+		\else%
+		\vskip0.25em%
+		{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+		\fi%     
+	\end{beamercolorbox}%
+	\vskip1em\par
+	\begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		\usebeamerfont{author}\insertauthor
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+		\usebeamerfont{institute}\insertinstitute
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[sep=8pt,center,#1]{date}
+		\usebeamerfont{date}\insertdate
+	\end{beamercolorbox}\vskip0.5em
+	{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+	\endgroup
+	\vfill
+}
+
+
+%% Part page: UN
+%
+%\defbeamertemplate*{part page}{UN}[1][]
+%{
+%	\begingroup
+%	\centering
+%	{\usebeamerfont{part name}\usebeamercolor[fg]{part name}\partname~\insertromanpartnumber}
+%	\vskip1em\par
+%	\begin{beamercolorbox}[sep=16pt,center,#1]{part title}
+%		\usebeamerfont{part title}\insertpart\par
+%	\end{beamercolorbox}
+%	\endgroup
+%}
+%
+%
+%% Section page: UN
+%
+%\defbeamertemplate*{section page}{UN}[1][]
+%{
+%	\begingroup
+%	\centering
+%	{\usebeamerfont{section name}\usebeamercolor[fg]{section name}\sectionname~\insertsectionnumber}
+%	\vskip1em\par
+%	\begin{beamercolorbox}[sep=12pt,center,#1]{section title}
+%		\usebeamerfont{section title}\insertsection\par
+%	\end{beamercolorbox}
+%	\endgroup
+%}
+%
+%% Subection page: UN
+%
+%\defbeamertemplate*{subsection page}{UN}[1][]
+%{
+%	\begingroup
+%	\centering
+%	{\usebeamerfont{subsection name}\usebeamercolor[fg]{subsection name}\subsectionname~\insertsubsectionnumber}
+%	\vskip1em\par
+%	\begin{beamercolorbox}[sep=8pt,center,#1]{subsection title}
+%		\usebeamerfont{subsection title}\insertsubsection\par
+%	\end{beamercolorbox}
+%	\endgroup
+%}
+%
+%
+%
+%
+%%
+%% Table of contents
+%%
+%
+%%\defbeamertemplateparent{sections/subsections in toc}{section in toc,subsection in toc,subsubsection in toc}
+%%{}
+%%
+%%\defbeamertemplateparent{sections/subsections in toc shaded}{section in toc shaded,subsection in toc shaded,subsubsection in toc shaded}[1][20]
+%%{[#1]}
+%
+%
+%
+%
+%% (sub-)section in toc: UN
+%
+%\defbeamertemplate*{section in toc}{UN}
+%{\inserttocsection\par}
+%
+%\defbeamertemplate*{subsection in toc}{UN}
+%{\leavevmode\leftskip=1.5em\inserttocsubsection\par}
+%
+%\defbeamertemplate*{subsubsection in toc}{UN}
+%{\leavevmode\normalsize\usebeamerfont{subsection in toc}\leftskip=3em%
+%	\usebeamerfont{subsubsection in toc}\inserttocsubsubsection\par}
+%
+%
+%% (sub-)section in toc shaded, UN
+%
+%\defbeamertemplate*{section in toc shaded}{UN}[1][20]
+%{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{section in toc}\end{colormixin}\unskip}
+%
+%\defbeamertemplate*{subsection in toc shaded}{UN}[1][20]
+%{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{subsection in toc}\end{colormixin}\unskip}
+%
+%\defbeamertemplate*{subsubsection in toc shaded}{UN}[1][20]
+%{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{subsubsection in toc}\end{colormixin}\unskip}
+%
+%
+%
+%
+%
+%%
+%% Item
+%%
+%
+%%\defbeamertemplateparent{items}{itemize items,enumerate items}
+%%{}
+%
+%
+%% Itemize items
+%
+%%\defbeamertemplateparent{itemize items}{itemize item,itemize subitem,itemize subsubitem}
+%%{}
+%
+%
+%% Itemize items, UN
+%
+%\defbeamertemplate*{itemize item}{UN}{\usebeamerfont*{itemize item}\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+%\defbeamertemplate*{itemize subitem}{UN}{\usebeamerfont*{itemize subitem}\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+%\defbeamertemplate*{itemize subsubitem}{UN}{\usebeamerfont*{itemize subsubitem}\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+%
+%
+%% Enumerate items, UN
+%
+%%\defbeamertemplateparent{enumerate items}{enumerate item,enumerate subitem,enumerate subsubitem,enumerate mini template}
+%%{}
+%
+%\defbeamertemplate*{enumerate item}{UN}{\insertenumlabel.}
+%\defbeamertemplate*{enumerate subitem}{UN}{\insertenumlabel.\insertsubenumlabel}
+%\defbeamertemplate*{enumerate subsubitem}{UN}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+%\defbeamertemplate*{enumerate mini template}{UN}{\insertenumlabel}
+%
+%
+%% Description item, UN
+%
+%\defbeamertemplate*{description item}{UN}{\insertdescriptionitem}
+%
+%
+%% Itemize/Enumerate body
+%
+%\defbeamertemplate*{itemize/enumerate body begin}{UN}{}
+%\defbeamertemplate*{itemize/enumerate body end}{UN}{}
+%
+%\defbeamertemplate*{itemize/enumerate subbody begin}{UN}{}
+%\defbeamertemplate*{itemize/enumerate subbody end}{UN}{}
+%
+%\defbeamertemplate*{itemize/enumerate subsubbody begin}{UN}{}
+%\defbeamertemplate*{itemize/enumerate subsubbody end}{UN}{}
+%
+%% Description body
+%
+%\defbeamertemplate*{description body begin}{UN}{}
+%\defbeamertemplate*{description body end}{UN}{}
+%
+%
+%% Alerted text
+%
+%\defbeamertemplate*{alerted text begin}{UN}{\setbeamercolor{local structure}{parent=alerted text}}
+%
+%
+%
+%% Structured text
+%
+%% empyt UNs
+%
+%
+%% Bibliography items
+%
+%\defbeamertemplate*{bibliography item}{UN}
+%{\lower3.5pt\hbox{\hskip2pt\pgfuseimage{beamericonarticle}\hskip1pt}}
+%
+%\defbeamertemplate*{bibliography entry article}{UN}{}
+%\defbeamertemplate*{bibliography entry title}{UN}{\par}
+%\defbeamertemplate*{bibliography entry location}{UN}{\par}
+%\defbeamertemplate*{bibliography entry note}{UN}{\par}
+%
+%
+%% Buttons
+%
+%\newdimen\beamer@dima%
+%\newdimen\beamer@dimb%
+%
+%\defbeamertemplate*{button}{UN}
+%{%
+%	\setbox\beamer@tempbox=\hbox{{\insertbuttontext}}%
+%	\ht\beamer@tempbox=6pt%
+%	\dp\beamer@tempbox=0pt%
+%	\setbox\beamer@tempbox=\vbox{\box\beamer@tempbox\vskip2pt}%
+%	\beamer@tempdim=\wd\beamer@tempbox%
+%	\beamer@dima=\beamer@tempdim\advance\beamer@dima by2.2pt
+%	\beamer@dimb=\beamer@tempdim\advance\beamer@dimb by4pt
+%	\begin{pgfpicture}{-4pt}{0pt}{\the\beamer@tempdim}{8pt}
+%		\color{bg}
+%		\pgfsetlinewidth{0.8pt}
+%		\pgfpathqmoveto{0pt}{0pt}
+%		\pgfpathqcurveto{-2.2pt}{0pt}{-4pt}{1.8pt}{-4pt}{4pt}
+%		\pgfpathqcurveto{-4pt}{6.2pt}{-2.2pt}{8pt}{0pt}{8pt}
+%		\pgfpathlineto{\pgfpoint{\the\beamer@tempdim}{8pt}}
+%		\pgfpathcurveto%
+%		{\pgfpoint{\the\beamer@dima}{8pt}}%
+%		{\pgfpoint{\the\beamer@dimb}{6.2pt}}%
+%		{\pgfpoint{\the\beamer@dimb}{4pt}}
+%		\pgfpathcurveto%
+%		{\pgfpoint{\the\beamer@dimb}{1.8pt}}%
+%		{\pgfpoint{\the\beamer@dima}{0pt}}%
+%		{\pgfpoint{\the\beamer@tempdim}{0pt}}
+%		\pgfpathclose
+%		\pgfusepathqfill
+%		\colorlet{bg}{parent.bg}
+%		\usebeamercolor[fg]{button border}
+%		\pgfpathqmoveto{0pt}{0pt}
+%		\pgfpathqcurveto{-2.2pt}{0pt}{-4pt}{1.8pt}{-4pt}{4pt}
+%		\pgfpathqcurveto{-4pt}{6.2pt}{-2.2pt}{8pt}{0pt}{8pt}
+%		\pgfpathlineto{\pgfpoint{\the\beamer@tempdim}{8pt}}
+%		\pgfpathcurveto%
+%		{\pgfpoint{\the\beamer@dima}{8pt}}%
+%		{\pgfpoint{\the\beamer@dimb}{6.2pt}}%
+%		{\pgfpoint{\the\beamer@dimb}{4pt}}
+%		\pgfpathcurveto%
+%		{\pgfpoint{\the\beamer@dimb}{1.8pt}}%
+%		{\pgfpoint{\the\beamer@dima}{0pt}}%
+%		{\pgfpoint{\the\beamer@tempdim}{0pt}}
+%		\pgfpathclose
+%		\pgfusepathqstroke
+%	\end{pgfpicture}%
+%	\hskip-\beamer@tempdim%
+%	\box\beamer@tempbox%
+%	\kern4pt%
+%}
+%
+%
+%% Abstract
+%
+%\defbeamertemplate*{abstract title}{UN}
+%{%
+%	\begin{center}%
+%		\abstractname
+%	\end{center}%
+%}
+%
+%\defbeamertemplate*{abstract begin}{UN}
+%{\beamercolorbox[vmode]{abstract}\leftskip2em\rightskip2em plus 1fill\usebeamerfont*{abstract}}
+%
+%\defbeamertemplate*{abstract end}{UN}
+%{\medskip\endbeamercolorbox}
+%
+%
+%% Verse
+%
+%\defbeamertemplate*{verse begin}{UN}
+%{\beamercolorbox[vmode]{verse}}
+%
+%\defbeamertemplate*{verse end}{UN}
+%{\endbeamercolorbox}
+%
+%
+%% Quotation
+%
+%\defbeamertemplate*{quotation begin}{UN}
+%{\beamercolorbox[vmode]{quotation}}
+%
+%\defbeamertemplate*{quotation end}{UN}
+%{\endbeamercolorbox}
+%
+%
+%% Quote
+%
+%\defbeamertemplate*{quote begin}{UN}
+%{\beamercolorbox[vmode]{quote}}
+%
+%\defbeamertemplate*{quote end}{UN}
+%{\endbeamercolorbox}
+%
+%
+%% Footnotes
+%
+%\defbeamertemplate*{footnote}{UN}
+%{
+%	\parindent 1em\noindent%
+%	\raggedright
+%	\hbox to 1.8em{\hfil\insertfootnotemark}\insertfootnotetext\par%
+%}
+%
+%
+%% Captions
+%
+%\defbeamertemplate*{caption}{UN}
+%{%
+%	\raggedright
+%	{%
+%		\usebeamercolor[fg]{caption name}%
+%		\usebeamerfont*{caption name}%
+%		\insertcaptionname
+%		\usebeamertemplate{caption label separator}%
+%	}%
+%	\insertcaption\par
+%}
+%\defbeamertemplate*{caption label separator}{UN}{:\ }
+%
+%% Blocks
+%
+%%\defbeamertemplateparent{blocks}{block begin,block end,%
+%%	block alerted begin,block alerted end,%
+%%	block example begin,block example end}
+%%{}
+%
+%\defbeamertemplate*{block begin}{UN}
+%{
+%	\par\vskip\medskipamount%
+%	\begin{beamercolorbox}[colsep*=.75ex]{block title}
+%		\usebeamerfont*{block title}\insertblocktitle%
+%	\end{beamercolorbox}%
+%	{\parskip0pt\par}%
+%	\ifbeamercolorempty[bg]{block title}
+%	{}
+%	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+%	\usebeamerfont{block body}%
+%	\begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
+%		\ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+%	}
+%	\defbeamertemplate*{block end}{UN}  
+%	{\end{beamercolorbox}\vskip\smallskipamount}
+%
+%\defbeamertemplate*{block alerted begin}{UN}
+%{
+%	\par\vskip\medskipamount%
+%	\begin{beamercolorbox}[colsep*=.75ex]{block title alerted}
+%		\usebeamerfont*{block title alerted}\insertblocktitle%
+%	\end{beamercolorbox}%
+%	{\parskip0pt\par}%
+%	\ifbeamercolorempty[bg]{block title alerted}
+%	{}
+%	{\ifbeamercolorempty[bg]{block body alerted}{}{\nointerlineskip\vskip-0.5pt}}%
+%	\usebeamerfont{block body alerted}%
+%	\begin{beamercolorbox}[colsep*=.75ex,vmode]{block body alerted}%
+%		\ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+%	}
+%	
+%	\defbeamertemplate*{block alerted end}{UN}
+%	{\end{beamercolorbox}\vskip\smallskipamount}
+%
+%
+%\defbeamertemplate*{block example begin}{UN}
+%{
+%	\par\vskip\medskipamount%
+%	\begin{beamercolorbox}[colsep*=.75ex]{block title example}
+%		\usebeamerfont*{block title example}\insertblocktitle%
+%	\end{beamercolorbox}%
+%	{\parskip0pt\par}%
+%	\ifbeamercolorempty[bg]{block title example}
+%	{}
+%	{\ifbeamercolorempty[bg]{block body example}{}{\nointerlineskip\vskip-0.5pt}}%
+%	\usebeamerfont{block body example}%
+%	\begin{beamercolorbox}[colsep*=.75ex,vmode]{block body example}%
+%		\ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+%	}
+%	\defbeamertemplate*{block example end}{UN}
+%	{\end{beamercolorbox}\vskip\smallskipamount}
+%
+%
+%
+%
+%% Theorems
+%%
+%%\defbeamertemplateparent{theorems}{theorem begin,theorem end}
+%%{}
+%
+%\defbeamertemplate*{theorem begin}{UN}
+%{%
+%	\begin{\inserttheoremblockenv}
+%		{%
+%			\inserttheoremname
+%			\ifx\inserttheoremaddition\@empty\else\ (\inserttheoremaddition)\fi%
+%		}%
+%	}
+%	
+%	\defbeamertemplate*{theorem end}{UN}
+%	{\end{\inserttheoremblockenv}}
+%
+%
+%% Proofs
+%\defbeamertemplate*{proof begin}{UN}
+%{\begin{block}{\insertproofname}}
+%	
+%	\defbeamertemplate*{proof end}{UN}
+%	{\end{block}}
+%
+%\defbeamertemplate*{qed symbol}{UN}
+%{\openbox}
+%
+
+
+
+\mode
+<all>

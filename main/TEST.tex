@@ -1,0 +1,105 @@
+%\documentclass[aspectratio=169]{beamer} %Aspect ratio 16:9 (160mm:90mm), same as PowerPoint panoramic
+\documentclass[]{beamer} %Aspect ratio 4:3
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\title{Plantilla de prueba UNAL}
+
+\date[ISPN ’80]{\today}
+
+\author[Sebasti\'an Echavarr\'ia ]{Sebasti\'an Echavarr\'ia \texttt{sechavarriam@unal.edu.co}}
+
+\usetheme{UN}
+
+\begin{document}
+	
+	\begin{frame}\end{frame} %Frame auxiliar con escudo logo y eslógan
+	
+	
+	\begin{frame} % Pagina titulo
+		\titlepage
+	\end{frame}
+
+\begin{frame} 
+	\tableofcontents[pausesections]
+\end{frame}
+
+
+\section{Prueba de fuentes regulares}
+
+\begin{frame}{Familias de texto normales Ancizar}
+	Texto normal\\
+	TEXTO NORMAL MAYÚSCULAS\\
+	\textbf{Texto en negrilla}\\
+	\textbf{TEXTO NEGRILLA MAYÚSCULAS}\\
+	\textit{Texto en cursiva}\\
+	\textit{TEXTO EN CURSIVA MAYÚSCULAS}\\
+	\textsc{Texto en versalitas}\\
+	\textsc{TEXTO EN VERSALITAS MAYÚSCULAS}
+	
+\end{frame}
+
+\section{Prueba de nuevas familias de fuente Ancizar}
+\begin{frame}{Nuevas Familias de Texto}
+	\framesubtitle{Sans y Serif FUENTE SEPARADA}
+	
+	
+	{\SansBlackItalic     SansBlackItalic    } \\
+	{\SansBlackItalic     SansBlackItalic    } \\
+	{\SansBlack           SansBlack          } \\
+	{\SansExtraboldItalic SansExtraboldItalic} \\
+	{\SansExtrabold       SansExtrabold      } \\
+	{\SansLightItalic     SansLightItalic    } \\
+	{\SansLight           SansLight          } \\~\\
+ 	
+ 	{\SerifExtraboldItalic SerifExtraboldItalic} \\
+ 	{\SerifExtrabold       SerifExtrabold      } \\
+ 	{\SerifLightItalic     SerifLightItalic    } \\
+ 	{\SerifLight           SerifLight          } \\
+ 	
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	\frametitle{Titulo}
+	\framesubtitle{Subtitulo} 
+  
+  Texto de prueba
+  \begin{equation}
+  	\int_{\Omega}^{\infty}f(x)d\mu
+  \end{equation}
+
+  \begin{multline}
+  	\label{LeastSquares}
+  	\dot{\mathbf{\phi}}^h=\min_{\dot{\mathbf{\phi}}\in\mathbb{R}^{n_{I}}} \left\lbrace \left\|\mathbf{r}(w,\mathbf{b},\dot{\mathbf{\phi}}) \right\|_2  \right\rbrace\\
+  	=\min_{\dot{\mathbf{\phi}}\in\mathbb{R}^{n_{I}}} \left\lbrace \sum_{i=1}^{n_s} \sqrt{w_i\mathbf{r}_i^2}  \right\rbrace =\min_{\dot{\mathbf{\phi}}\in\mathbb{R}^{n_{I}}} \left\lbrace \sum_{i=1}^{n_s} {w_i\mathbf{r}_i^2}  \right\rbrace.
+  \end{multline}
+
+  
+\end{frame}
+	
+\begin{frame}
+	\frametitle{There Is No Largest Prime Number}
+	\framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+	\begin{theorem}
+		There is no largest prime number.
+	\end{theorem}
+	\begin{proof}
+		\begin{enumerate}
+			\item<1-> Suppose $p$ were the largest prime number.
+			\item<2-> Let $q$ be the product of the first $p$ numbers.
+			\item<3-> Then $q + 1$ is not divisible by any of them.
+			\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+			number not in the first $p$ numbers.\qedhere
+		\end{enumerate}
+	\end{proof}
+	\uncover<4->{The proof used \textit{reductio ad absurdum}.}
+\end{frame}	
+	
+	
+\end{document}
