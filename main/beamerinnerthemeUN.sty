@@ -36,14 +36,19 @@
    \node (logo) [inner sep=0pt] at (\the\paperwidth/2,3*\the\paperheight/5){\includegraphics[width=.23\textwidth]{logos/EscudoUNAL_negroA.pdf}};
    
    \fill[color={rgb,255:red,232; green,83 ; blue,53}]
-   (1*\the\paperwidth/5,0) rectangle(\the\paperwidth-1*\the\paperwidth/5,\the\paperheight/7); 
+   (1*\the\paperwidth/6,0) rectangle(\the\paperwidth-1*\the\paperwidth/6,\the\paperheight/7);
+   
+   \node (aaa) [inner sep=0pt, color={rgb,255:red,242; green,231; blue,204}] at (\the\paperwidth/2,\the\paperheight/15){\footnotesize\scshape {\SansLight proyecto} \textbf{cultural, científico y colectivo} {\SansLight de nación}} ;
    \fi  
    
    
    \ifnum\thepage>1\relax %Para primera página
    \fill[color={rgb,255:red,232; green,83 ; blue,53}]
    (1*\the\paperwidth/100,0) rectangle(\the\paperwidth,\the\paperheight/9); 
-   \node (logo) [inner sep=0pt] at (9*\the\paperwidth/10,\the\paperheight/20){\includegraphics[width=.15\textwidth]{logos/Logo_UNAL_blancoRojo.pdf}};
+   \node (logoSimbolo) [inner sep=0pt] at (9*\the\paperwidth/10,\the\paperheight/20){\includegraphics[width=.15\textwidth]{logos/Logo_UNAL_blancoRojo.pdf}};
+   
+   \node (aaa) [inner sep=0pt, color={rgb,255:red,242; green,231; blue,204}] at (6*\the\paperwidth/10,\the\paperheight/20){\tiny\scshape {\SansLight proyecto} \textbf{cultural, científico y colectivo} {\SansLight de nación}};
+   
    \fi
    
    
