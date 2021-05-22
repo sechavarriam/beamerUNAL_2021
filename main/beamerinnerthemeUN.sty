@@ -33,7 +33,7 @@
    (\the\paperwidth/100,0) rectangle(\the\paperwidth-\the\paperwidth/100,\the\paperheight); 
    
    % IMAGEN LOGO PRIMER FRAME
-   \node (logo) [inner sep=0pt] at (\the\paperwidth/2,3*\the\paperheight/5){\includegraphics[width=.23\textwidth]{logos/EscudoUNAL_negroA.pdf}};
+   \node (logo) [inner sep=0pt] at (\the\paperwidth/2,3*\the\paperheight/6){\includegraphics[width=1.1\textwidth]{logos/AzulMalProcesado.png}};
    
    \fill[color={rgb,255:red,232; green,83 ; blue,53}]
    (1*\the\paperwidth/6,0) rectangle(\the\paperwidth-1*\the\paperwidth/6,\the\paperheight/7);
@@ -45,7 +45,7 @@
    \ifnum\thepage>1\relax %Para primera página
    \fill[color={rgb,255:red,232; green,83 ; blue,53}]
    (1*\the\paperwidth/100,0) rectangle(\the\paperwidth,\the\paperheight/9); 
-   \node (logoSimbolo) [inner sep=0pt] at (9*\the\paperwidth/10,\the\paperheight/20){\includegraphics[width=.15\textwidth]{logos/Logo_UNAL_blancoRojo.pdf}};
+   \node (logoSimbolo) [inner sep=0pt] at (9*\the\paperwidth/10,\the\paperheight/20){\includegraphics[width=.15\textwidth]{logos/PNGlogosimboloColorBeige.png}};
    
    \node (aaa) [inner sep=0pt, color={rgb,255:red,242; green,231; blue,204}] at (6*\the\paperwidth/10,\the\paperheight/20){\tiny\scshape {\SansLight proyecto} \textbf{cultural, científico y colectivo} {\SansLight de nación}};
    
@@ -80,6 +80,30 @@
 
 \defbeamertemplate*{title page}{UN}[1][]
 {
+
+\begin{tikzpicture}[remember picture,overlay]
+\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	
+\node[at=(current page.center),fill=white, minimum width=\paperwidth, minimum height=\paperheight] {};
+\fill[color={rgb,255:red,243; green,183; blue, 60}] 
+(0,0) rectangle(\the\paperwidth,1);
+
+
+\node at (current page.north west) [fill=red!20,rounded
+corners,below right] {Top Left}; 
+\node at (current page.south west) [fill=red!20,rounded
+corners,above right] {Bottom Left}; 
+\node at (current page.south east) [fill=red!20,rounded
+corners,above left] {Bottom Right}; 
+\node at (current page.north east) [fill=red!20,rounded
+corners,below left] {Top Right}; 
+\node at (current page) [fill=red!20,rounded
+corners] {Center}; 
+
+\end{tikzpicture}
+	
+	
+	
 	\vbox{}
 	\vfill
 	\begingroup
